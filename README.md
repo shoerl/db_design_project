@@ -18,6 +18,8 @@ We have come up with a basic data model for storing artists, their albums, and t
 
 <ins>5. Link to UML diagram</ins>
 
+[UML Diagram](https://github.com/shoerl/db_design_project/blob/master/db_design_final_project_UML.pdf)
+
 <ins>6. Description of the user data model</ins>
 
 For our user data model we decided to make a artist entity, which represents a artist and also a user of the website. This made sense for the use case of artists logging in as themselves and cataloging their own music. The use case for a band would be to have one member sign up, and then represent the band. The fields we have currently in this model are the first name of the artist in string form, last name of the artist in string form, username of the artist in string form, password of the artist in string form, email of the artist in string form, date of birth of the artist in date form, and their artist name in string form.
