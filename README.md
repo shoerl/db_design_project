@@ -25,7 +25,7 @@ For our user data model we decided to make a artist entity, which represents a a
 <ins>7. Description of the two domain object data models</ins>
 
 1. The first domain object we have is a album entity, which represents a album from a artist. This made sense for a music data model. The fields for the album are the title of the album in string form, the artwork path in string form (for displaying the artwork of album on website), and the release date of the album in date form. The album would also have a foreign key to the artist who owns the album. We considered putting a genre for the album too, but decided it fit better in the song entity as a album could have songs of differing genres.
-2. The second domain object we have is a song entity, which represents a song from a album. The fields for the a song are the title of the song in string form, the length of the song in decimal form (bigdecimal in java), the genre of the song in genre form, and explicitness of the song which is a tinyint (boolean in java). We chose to use tinyint to represent booleans here as it was the best option. The song would also have a foreign key to the album which the song belongs.
+2. The second domain object we have is a song entity, which represents a song from a album. The fields for the a song are the title of the song in string form, the length of the song in decimal form (bigdecimal in java), the genre of the song in genre form, and explicitness of the song which is a boolean (boolean in java, tinyint in sql). We chose to use tinyint to represent booleans here as it was the best option. The song would also have a foreign key to the album which the song belongs.
 
 <ins>8. Description of the user to domain object relationship</ins>
 
