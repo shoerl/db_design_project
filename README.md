@@ -31,15 +31,16 @@ For our user data model we decided to make a artist entity, which represents a a
 
 <ins>8. Description of the user to domain object relationship</ins>
 
-The relationship between artists and album is our user to domain object relationship. It is a one to many relationship from artists to albums. This means that one artist can have many albums. The album holds a foreign key to the artist, which is how this relationship is accomplished. This relationship inherently makes sense in our domain.
+The relationship between artists and album is our user to domain object relationship. It is a one to many relationship from artists to albums. This means that one artist can have many albums. The album holds a foreign key to the artist, which is how this relationship is accomplished. This relationship inherently makes sense in our domain. There is also a constraint on the album table for the artist foreign key. This enforces the relationship and also removes related entities in the case that a artist gets removed (so the albums get removed as well).
 
 <ins>9. Description of domain object to domain object relationship</ins>
 
-Our domain object to domain object relationship is the relationship between albums and songs. It is a one to many relationship from albums to songs. This means that one album can have many songs. The song holds a foreign key to the album, which is how this relationship is accomplished. This relationship again inherently makes sense in our domain, as albums have many songs. This relationship also implies that there is a one to many relationship between artists and songs.
+Our domain object to domain object relationship is the relationship between albums and songs. It is a one to many relationship from albums to songs. This means that one album can have many songs. The song holds a foreign key to the album, which is how this relationship is accomplished. This relationship again inherently makes sense in our domain, as albums have many songs. This relationship also implies that there is a one to many relationship between artists and songs. There is also a constraint on the song table for the album foreign key. This enforces the relationship and also removes related entities in the case that a album gets removed (so the songs get removed as well).
 
 <ins>10. Description of the portable enumeration</ins>
 
-We chose to use genre as our portable enumeration. It is implemented as varchar in the database since we were told not to use sql enum, but it will be a enumeration in java. This made sense as an enumeration because there are a fixed set of genres, and there should always be a genre associated with a song. The values we chose for genre are: BLUES, JAZZ, ROCK, COUNTRY, SOUL, DANCE, HIP-HOP, POP
+We chose to use genre as our portable enumeration. It is implemented through the use of a genre table which has one column (the genre) and constraints on the tables which use the genre table. This means that within our song table the genre must always be a given value within the genre table, since there is a constraint. Genre made sense as an enumeration because there are a fixed set of genres, and there should always be a genre associated with a song. The values we chose for genre are: BLUES, JAZZ, ROCK, COUNTRY, SOUL, DANCE, HIP-HOP, POP
+
 
 <ins>11. Description of the user interface requirements</ins>
 - Artist List - displays a list of all artists
