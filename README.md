@@ -45,7 +45,7 @@ We chose to use genre as our portable enumeration. It is implemented through the
 <ins>11. Description of the user interface requirements</ins>
 - Artist List - displays a list of all artists
 - Artist Editor - displays a particular artist for editions or allows creating a new artist, and navigate to the albums for that artist
-- ALbum List - displays a list of all albums or all albums for a particular artist
+- Album List - displays a list of all albums or all albums for a particular artist
 - Album Editor - displays a particular album for editing or allows creating a new album, and navigate to the songs for that album
 - Song List - displays a list of all songs or all songs for a particular artist or all songs for a particular album
 - Song Editor - displays a particular song for editing or allows creating a new song, and navigate to the artist/album associated
