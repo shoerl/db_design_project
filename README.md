@@ -39,7 +39,7 @@ Our domain object to domain object relationship is the relationship between albu
 
 <ins>10. Description of the portable enumeration</ins>
 
-We chose to use genre as our portable enumeration. It is implemented through the use of a genre table which has one column (the genre) and constraints on the tables which use the genre table. This means that within our song table the genre must always be a given value within the genre table, since there is a constraint. Genre made sense as an enumeration because there are a fixed set of genres, and there should always be a genre associated with a song. The values we chose for genre are: BLUES, JAZZ, ROCK, COUNTRY, SOUL, DANCE, HIP-HOP, POP
+We chose to use genre as our portable enumeration. It is implemented through the use of a genre table which has one column (the genre) and constraints on the tables which use the genre table. This means that within our song table the genre must always be a given value within the genre table, since there is a constraint. Genre made sense as an enumeration because there are a fixed set of genres, and there should always be a genre associated with a song. The values we chose for genre are: BLUES, JAZZ, ROCK, COUNTRY, SOUL, DANCE, HIPHOP, POP
 
 
 <ins>11. Description of the user interface requirements</ins>
