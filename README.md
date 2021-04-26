@@ -66,6 +66,10 @@ From the web interface, you can create an artist, create albums for that artist,
 
 <ins>User</ins>
 
+A typical user for our solution would be an employee of a music label, or one of the artists in the music label. In order for artists to use the tool properly, the interface would need to be expanded to allow for sign up/login, and to also ensure that artists can only update/add/delete from objects that relate to them (in other words they would only be able to update their own songs and albums).
+
+In its current form an employee of the music label would add the artists themselves, and then add the songs/albums as well. This would give them an interface to add all of the artists/albums/songs who are under their label.
+
 <ins>Domain Objects</ins>
 
 1. The first domain object we have is a album entity, which represents a album from a artist. This made sense for a music data model. The fields for the album are the title of the album in string form, the artwork path in string form (for displaying the artwork of album on website), and the release date of the album in date form. The album would also have a foreign key to the artist who owns the album. We considered putting a genre for the album too, but decided it fit better in the song entity as a album could have songs of differing genres.
