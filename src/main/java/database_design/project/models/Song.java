@@ -53,7 +53,6 @@ public class Song {
         this.setLength(updatedSong.getLength());
         this.setGenre(updatedSong.getGenre());
         this.setExplicit(updatedSong.getExplicit());
-        this.setAlbum(updatedSong.getAlbum());
     }
 
 }

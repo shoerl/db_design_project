@@ -48,6 +48,5 @@ public class Album {
         this.setTitle(updatedAlbum.getTitle());
         this.setArtworkPath(updatedAlbum.getArtworkPath());
         this.setDateReleased(updatedAlbum.getDateReleased());
-        this.setArtist(updatedAlbum.getArtist());
     }
 }

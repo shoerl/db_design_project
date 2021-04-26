@@ -25,6 +25,11 @@ const AlbumList = () => {
                                 {album.dateReleased},
                                 {album.artworkPath}
                             </Link>
+                            <Link to={`/artists/${artistId}/albums/${album.id}/songs`}>
+                                <button className="btn btn-primary">
+                                    Songs
+                                </button>
+                            </Link>
                         </li>
                     )
                 }
