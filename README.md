@@ -53,6 +53,7 @@ We chose to use genre as our portable enumeration. It is implemented through the
 <hr/>
 
 <ins>Problem Statement</ins>
+
 The problem that our project is trying to solve is that of a music label attempting to tally up all of the albums for their respective artists. It also could be a music label attempting to find the genre distribution for all of the songs of their artists. This would require that the music label has a outlet to view all of their artists, the albums of their respective artists, the songs of those respective albums, and the respective metadata for those entities (album title, song length, etc.). Since these management entities are often picking up new artists and dropping others, having a interface/model which allows for easy updating/adding/removing is very important. Likewise since these artists are often making new music, it is important to have a interface/model that allows for the songs and albums to be added.
 
 <ins>Solution Statement</ins>
