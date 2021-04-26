@@ -49,3 +49,24 @@ We chose to use genre as our portable enumeration. It is implemented through the
 - Album Editor - displays a particular album for editing or allows creating a new album, and navigate to the songs for that album
 - Song List - displays a list of all songs or all songs for a particular artist or all songs for a particular album
 - Song Editor - displays a particular song for editing or allows creating a new song, and navigate to the artist/album associated
+
+<hr/>
+
+<ins>Problem Statement</ins>
+
+The problem that our project is trying to solve is music labels and other management entities being able to access and view all of their artists, the albums of their respective artists, and the songs of those respective albums, and the respective metadata for those entities (album title, song length, etc.). The problem would be a music label trying to tally up all of the albums for their respective artists. Since these management entities are often picking up new artists and dropping others, having a interface/model which allows for easy updating/adding/removing is very important. Likewise since these artists are often making new music, it is important to have a interface/model that allows for the songs and albums to be added.
+
+<ins>Solution Statement</ins>
+
+The solution for a music label who could not figure out all of the albums their respective artists have, or who could not figure out who all of their artists are would be a database and user interface like ours. This was solved in many steps. First we created tables in our database for the domain objects we are trying to model (artist, album, song, genre). Then we made a Java Spring API for our database and implemented CRUD operations for all of the domain objects. This required us to create model classes for each of our domain objects, and then DAO classes as well for the CRUD operations. This allowed us to easily create, read, update, and delete entities remotely from any of our tables.
+
+A web interface was then built to allow for a user interface for our CRUD operations. This was done using React. We decided to implement List and Edit screens for each of our main domain objects (artist, album, song). The user interface is laid out logically in respect to the database relationships. This means that to have a album there must be an artist, and to have a song there must be a artist and album. We were able to implement this data flow just using the navigation/routing.
+
+From the web interface, you can create an artist, create albums for that artist, and create songs for those albums.
+
+<ins>User</ins>
+
+<ins>Domain Objects</ins>
+
+1. The first domain object we have is a album entity, which represents a album from a artist. This made sense for a music data model. The fields for the album are the title of the album in string form, the artwork path in string form (for displaying the artwork of album on website), and the release date of the album in date form. The album would also have a foreign key to the artist who owns the album. We considered putting a genre for the album too, but decided it fit better in the song entity as a album could have songs of differing genres.
+2. The second domain object we have is a song entity, which represents a song from a album. The fields for the a song are the title of the song in string form, the length of the song in decimal form (bigdecimal in java), the genre of the song in genre form, and explicitness of the song which is a boolean (boolean in java, tinyint in sql). We chose to use tinyint to represent booleans here as it was the best option. The song would also have a foreign key to the album which the song belongs.
