@@ -9,7 +9,8 @@ const AlbumFormEditor = () => {
     useEffect(() => {
         if (id !== "new") {
             findAlbumById(id)
-        }}, []);
+        }
+    }, []);
     const findAlbumById = (id) => albumService.findAlbumById(id)
         .then(album => setAlbum(album));
     const deleteAlbum = (id) => albumService.deleteAlbum(id)
@@ -21,14 +22,15 @@ const AlbumFormEditor = () => {
     return (
         <div>
             <h2>Album Editor</h2>
-            <button className="btn btn-primary"
-                    onClick={() => history.push(`/artists/${artistId}/albums/${album.id}/songs`)}>
+            {album.id && <span><button className="btn btn-primary"
+                                       onClick={() => history.push(`/artists/${artistId}/albums/${album.id}/songs`)}>
                 View songs for {album.title}
-            </button><br/>
+            </button><br/></span>}
             <button className="btn btn-primary"
                     onClick={() => history.push(`/artists/${artistId}`)}>
                 Edit artist
-            </button><br/>
+            </button>
+            <br/>
             <label>Id</label>
             <input disabled value={album.id}/><br/>
             <label>Title</label>
@@ -44,7 +46,9 @@ const AlbumFormEditor = () => {
                 setAlbum(album => ({...album, artworkPath: e.target.value}))}
                    value={album.artworkPath}/><br/>
             <button className="btn btn-warning"
-                    onClick={() => {history.goBack()}}>
+                    onClick={() => {
+                        history.goBack()
+                    }}>
                 Cancel
             </button>
             <button className="btn btn-danger"
