@@ -27,6 +27,11 @@ const ArtistList = () => {
                                 {artist.email},
                                 {artist.dateOfBirth}
                             </Link>
+                            <Link to={`/artists/${artist.id}/albums`}>
+                                <button className="btn btn-primary">
+                                    Albums
+                                </button>
+                            </Link>
                         </li>
                     )
                 }

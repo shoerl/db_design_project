@@ -1,5 +1,7 @@
 package database_design.project.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -32,6 +34,7 @@ public class Artist {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date dateOfBirth;
     public Date getDateOfBirth() { return dateOfBirth; }
     public void setDateOfBirth(Date dateOfBirth) { this.dateOfBirth = dateOfBirth; }

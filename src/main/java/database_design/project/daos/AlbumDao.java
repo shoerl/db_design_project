@@ -41,6 +41,11 @@ public class AlbumDao {
         return albumRepository.findAllAlbums();
     }
 
+    @GetMapping("/api/albums/{albumId}")
+    public Album findAlbumById(@PathVariable("albumId") Integer id) {
+        return albumRepository.findAlbumById(id);
+    }
+
     @PutMapping("/api/albums/{albumId}")
     public Album updateAlbum(@PathVariable("albumId") Integer aid,
                              @RequestBody Album updatedAlbum) {
@@ -50,7 +55,7 @@ public class AlbumDao {
     }
 
     @DeleteMapping("/api/albums/{albumId}")
-    public void deleteAlbum(@PathVariable("albumId") Integer aid) {
-        albumRepository.deleteById(aid);
+    public void deleteAlbum(@PathVariable("albumId") Integer id) {
+        albumRepository.deleteById(id);
     }
 }

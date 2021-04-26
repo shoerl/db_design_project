@@ -1,5 +1,6 @@
 package database_design.project.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Album {
     public String getArtworkPath() { return artworkPath; }
     public void setArtworkPath(String artworkPath) { this.artworkPath = artworkPath; }
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date dateReleased;
     public Date getDateReleased() { return dateReleased; }
     public void setDateReleased(Date dateReleased) { this.dateReleased = dateReleased; }

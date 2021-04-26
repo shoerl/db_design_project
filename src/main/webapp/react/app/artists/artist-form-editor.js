@@ -10,12 +10,8 @@ const ArtistFormEditor = () => {
         if (id !== "new") {
             findArtistById(id)
         }}, []);
-    const fixDate = (artist) => {
-        artist.dateOfBirth = new Date(artist.dateOfBirth).toISOString().split("T")[0];
-        return artist;
-    }
     const findArtistById = (id) => artistService.findArtistById(id)
-        .then(artist => fixDate(artist)).then(artist => setArtist(artist));
+        .then(artist => setArtist(artist));
     const deleteArtist = (id) => artistService.deleteArtist(id)
         .then(() => history.goBack());
     const createArtist = (artist) => artistService.createArtist(artist)

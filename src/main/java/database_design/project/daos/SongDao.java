@@ -41,11 +41,21 @@ public class SongDao {
         return songRepository.findAllSongs();
     }
 
+    @GetMapping("/api/songs/{songId}")
+    public Song findSongById(@PathVariable("songId") Integer id) {
+        return songRepository.findSongById(id);
+    }
+
     @PutMapping("/api/songs/{songId}")
     public Song updateSong(@PathVariable("songId") Integer sid,
                            @RequestBody Song updatedSong) {
         Song song = songRepository.findSongById(sid);
         song.replaceAllAttributes(updatedSong);
         return songRepository.save(song);
+    }
+
+    @DeleteMapping("/api/songs/{songId}")
+    public void deleteSong(@PathVariable("songId") Integer id) {
+        songRepository.deleteById(id);
     }
 }
