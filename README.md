@@ -53,8 +53,7 @@ We chose to use genre as our portable enumeration. It is implemented through the
 <hr/>
 
 <ins>Problem Statement</ins>
-
-The problem that our project is trying to solve is music labels and other management entities being able to access and view all of their artists, the albums of their respective artists, and the songs of those respective albums, and the respective metadata for those entities (album title, song length, etc.). The problem would be a music label trying to tally up all of the albums for their respective artists. Since these management entities are often picking up new artists and dropping others, having a interface/model which allows for easy updating/adding/removing is very important. Likewise since these artists are often making new music, it is important to have a interface/model that allows for the songs and albums to be added.
+The problem that our project is trying to solve is that of a music label attempting to tally up all of the albums for their respective artists. It also could be a music label attempting to find the genre distribution for all of the songs of their artists. This would require that the music label has a outlet to view all of their artists, the albums of their respective artists, the songs of those respective albums, and the respective metadata for those entities (album title, song length, etc.). Since these management entities are often picking up new artists and dropping others, having a interface/model which allows for easy updating/adding/removing is very important. Likewise since these artists are often making new music, it is important to have a interface/model that allows for the songs and albums to be added.
 
 <ins>Solution Statement</ins>
 
@@ -66,7 +65,9 @@ From the web interface, you can create an artist, create albums for that artist,
 
 <ins>User</ins>
 
-A typical user for our solution would be an employee of a music label, or one of the artists in the music label. In order for artists to use the tool properly, the interface would need to be expanded to allow for sign up/login, and to also ensure that artists can only update/add/delete from objects that relate to them (in other words they would only be able to update their own songs and albums).
+A typical user for our solution would be an employee of a music label / management entity, or one of the artists under the music label / management entity. In order for artists to use the tool properly, the interface would need to be expanded to allow for sign up/login, and to also ensure that artists can only update/add/delete from objects that relate to them (in other words they would only be able to update their own songs and albums).
+
+An employee of a music label / management entity is our target user because they have a need to store this data. In other words those are people who would benefit from being able to catalogue and store this type of data. For example, a music label may want to figure out the average song length for all of the songs under their label. This project would give them a database / user interface that allows them to do that.
 
 In its current form an employee of the music label would add the artists themselves, and then add the songs/albums as well. This would give them an interface to add all of the artists/albums/songs who are under their label.
 
