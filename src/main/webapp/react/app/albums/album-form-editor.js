@@ -21,6 +21,14 @@ const AlbumFormEditor = () => {
     return (
         <div>
             <h2>Album Editor</h2>
+            <button className="btn btn-primary"
+                    onClick={() => history.push(`/artists/${artistId}/albums/${album.id}/songs`)}>
+                View songs for {album.title}
+            </button><br/>
+            <button className="btn btn-primary"
+                    onClick={() => history.push(`/artists/${artistId}`)}>
+                Edit artist
+            </button><br/>
             <label>Id</label>
             <input disabled value={album.id}/><br/>
             <label>Title</label>

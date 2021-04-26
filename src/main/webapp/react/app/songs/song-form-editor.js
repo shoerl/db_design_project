@@ -9,6 +9,8 @@ const SongFormEditor = () => {
     useEffect(() => {
         if (id !== "new") {
             findSongById(id)
+        } else {
+            song.explicit = false;
         }}, []);
     const findSongById = (id) => songService.findSongById(id)
         .then(song => setSong(song));
@@ -21,6 +23,10 @@ const SongFormEditor = () => {
     return(
         <div>
             <h2>Song Editor</h2>
+            <button className="btn btn-primary"
+                    onClick={() => history.push(`/artists/${artistId}/albums/${albumId}`)}>
+                Edit album
+            </button><br/>
             <label>Id</label>
             <input disabled value={song.id}/><br/>
             <label>Title</label>
