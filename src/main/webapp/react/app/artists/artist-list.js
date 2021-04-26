@@ -11,16 +11,22 @@ const ArtistList = () => {
     return(
         <div>
             <h2>Artist List</h2>
-            <button className="btn btn-primary">
+            <button className="btn btn-primary"
+                    onClick={() => history.push("/artists/new")}>
                 Add Artist
             </button>
             <ul className="list-group">
                 {
                     artists.map(artist =>
                         <li key={artist.id}>
+                            <Link to={`/artists/${artist.id}`}>
                                 {artist.firstName},
                                 {artist.lastName},
-                                {artist.username}
+                                {artist.username},
+                                {artist.artistName},
+                                {artist.email},
+                                {artist.dateOfBirth}
+                            </Link>
                         </li>
                     )
                 }
